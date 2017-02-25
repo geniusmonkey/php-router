@@ -11,6 +11,7 @@ namespace GeniusMonkey\Router;
 
 use GeniusMonkey\Router\Builder\RouterBuilder;
 use GeniusMonkey\Router\Internal\CoreRouter;
+use GeniusMonkey\Router\Internal\RouteBuilderImpl;
 
 class Routes
 {
@@ -28,6 +29,6 @@ class Routes
      * @return RouterBuilder
      */
     public static function builder(){
-
+        return new RouteBuilderImpl();
     }
 }
