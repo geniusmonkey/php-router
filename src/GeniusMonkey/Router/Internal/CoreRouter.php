@@ -255,6 +255,11 @@ class CoreRouter implements Router, Routable
         return $filters;
     }
 
+    public function setObjectFactory($objectFactory)
+    {
+        $this->objectFactory = $objectFactory;
+    }
+
     private function startsWith($haystack, $needle)
     {
         // search backwards starting from haystack length characters from the end

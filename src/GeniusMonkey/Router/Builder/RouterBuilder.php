@@ -13,7 +13,15 @@ use GeniusMonkey\Router\Config\ObjectFactory;
 
 interface RouterBuilder
 {
+    /**
+     * @param ObjectFactory $factory
+     * @return mixed
+     */
+    function objectFactory(ObjectFactory $factory);
 
-    function objectFactor(ObjectFactory $factory);
+    /**
+     * @return mixed
+     */
+    function build();
 
 }
