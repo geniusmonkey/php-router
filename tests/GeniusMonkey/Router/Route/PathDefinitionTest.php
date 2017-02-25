@@ -15,7 +15,7 @@ class PathDefinitionTest extends TestCase
 {
 
 
-    public function shouldPass()
+    public function testPass()
     {
         $this->assertTrue(false);
     }
