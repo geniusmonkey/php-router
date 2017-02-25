@@ -9,7 +9,6 @@
 namespace GeniusMonkey\Router\Filter;
 
 
-use GeniusMonkey\Router\Filter\FilterChain;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 

@@ -42,9 +42,14 @@ class PathDefinition
         $requestedParts = $context->getPathParts();
         $routeParts = $this->pathParts;
 
-        if(count($requestedParts) < count($routeParts)){
-            return $context->setMatched(false);
+        if(sizeof($routeParts) == 1 && $routeParts[0] === ""){
+            return $context->matched(true);
         }
+
+        if(count($requestedParts) < count($routeParts)){
+            return $context->matched(false);
+        }
+
 
         $pathParams = [];
         for($i = 0; $i < count($this->pathParts); $i++){
@@ -54,8 +59,7 @@ class PathDefinition
                 $key = substr($routePart, 1);
                 $pathParams[$key] = $requestPart;
             } elseif ($requestPart != $routePart) {
-                $context->setMatched(false);
-                return false;
+                return $context->matched(false);
             }
         }
 

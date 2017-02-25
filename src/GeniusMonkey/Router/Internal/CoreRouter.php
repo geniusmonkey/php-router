@@ -13,9 +13,9 @@ use GeniusMonkey\Router\Config\ObjectFactory;
 use GeniusMonkey\Router\Filter\CoreFilterChain;
 use GeniusMonkey\Router\Filter\Filter;
 use GeniusMonkey\Router\Filter\FilterDefinition;
-use GeniusMonkey\Router\Routable;
 use GeniusMonkey\Router\Route\MatchContext;
 use GeniusMonkey\Router\Route\PathDefinition;
+use GeniusMonkey\Router\Route\Routable;
 use GeniusMonkey\Router\Route\RouteDefinition;
 use GeniusMonkey\Router\Route\RouteNotFoundException;
 use GeniusMonkey\Router\RouteConfiguration;
@@ -187,7 +187,7 @@ class CoreRouter implements Router, Routable
         $callable = $route->getCallable();
         if ($route->isMount()) {
             $subRouter = new CoreRouter();
-            $subRouter->setContainer($this->container);
+            $subRouter->objectFactory = $this->objectFactory;
             $callable($subRouter);
             $subPath = $context->getSubPath();
             return $subRouter->route($subPath, $req);
@@ -212,7 +212,7 @@ class CoreRouter implements Router, Routable
             $this->routeMethods[$method] = [];
         }
 
-        $this->routeMethods[$method][new RouteDefinition($path, $callable, $isMount)];
+        $this->routeMethods[$method][] = new RouteDefinition($path, $callable, $isMount);
     }
 
     private function addAllRoutes($path, $callable, $mount = false)

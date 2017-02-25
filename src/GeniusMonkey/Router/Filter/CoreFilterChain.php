@@ -9,7 +9,7 @@
 namespace GeniusMonkey\Router\Filter;
 
 
-use GeniusMonkey\Router\Routable;
+use GeniusMonkey\Router\Route\Routable;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 

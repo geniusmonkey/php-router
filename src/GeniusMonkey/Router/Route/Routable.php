@@ -6,7 +6,7 @@
  * Time: 5:38 PM
  */
 
-namespace GeniusMonkey\Router;
+namespace GeniusMonkey\Router\Route;
 
 
 use Psr\Http\Message\RequestInterface;

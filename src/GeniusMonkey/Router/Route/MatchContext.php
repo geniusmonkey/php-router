@@ -38,6 +38,15 @@ class MatchContext
     public function setMatched($matched)
     {
         $this->matched = $matched;
+    }
+
+    /**
+     * @param $matched
+     * @return boolean
+     */
+    public function matched($matched)
+    {
+        $this->matched = true;
         return $matched;
     }
 
