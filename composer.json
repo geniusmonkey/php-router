@@ -15,7 +15,10 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit tests/ --log-junit=./build/test-results/log.xml"
+    },
+    "config": {
+        "bin-dir": "bin"
     },
     "license": "MIT",
     "authors": [

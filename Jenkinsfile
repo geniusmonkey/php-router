@@ -11,6 +11,10 @@ podTemplate(label: 'composer-php5', containers: [
             stage 'Install Dependencies'
             sh 'composer install'
 
+            stage 'Unit Test'
+            sh 'composer test'
+            junit '**/test-results/*.xml'
+
         }
 
         // stage 'Get Project'
