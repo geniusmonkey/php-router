@@ -29,5 +29,6 @@ class RouteBuilderImpl implements RouterBuilder
     {
         $router = new CoreRouter();
         $router->setObjectFactory($this->objectFactory == null ? new ZeroArgumentInstanceFactory() : $this->objectFactory);
+        return $router;
     }
 }
