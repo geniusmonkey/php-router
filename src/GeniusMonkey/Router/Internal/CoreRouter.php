@@ -115,7 +115,7 @@ class CoreRouter implements Router, Routable
                 $instant = $this->objectFactory->instance($config);
             }
 
-            if (!($config instanceof RouteConfiguration)) {
+            if (!($instant instanceof RouteConfiguration)) {
                 throw new \InvalidArgumentException("In order to mount '$path' you must pass in a object or class that implements " . RouteConfiguration::class);
             }
 
