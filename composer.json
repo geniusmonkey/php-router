@@ -7,8 +7,7 @@
         "monolog/monolog": "^1.22"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.7.*",
-        "kodova/poser": "1.0.0"
+        "phpunit/phpunit": "5.7.*"
     },
     "autoload": {
         "psr-4": {
